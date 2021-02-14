@@ -5,8 +5,6 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour
 {
     public Animator animator;
-    
-    
     public float mvmtSpeed = 7;
     public float pcMvmt = 0f;
     public float jumpForce = 400f;
@@ -20,9 +18,6 @@ public class CharacterController2D : MonoBehaviour
     private bool grounded;
     private SpriteRenderer spriteRenderer;
     
-
-
-
     CharacterController2D controller;
     // Start is called before the first frame update
     void Awake()
@@ -33,9 +28,7 @@ public class CharacterController2D : MonoBehaviour
         animator.GetComponent<Animator>(); //animator component
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-
-        
+  
     }
 
     // Update is called once per frame
@@ -54,10 +47,7 @@ public class CharacterController2D : MonoBehaviour
             spriteRenderer.flipX = false;
         }
         
-        
-
-        
-        print(pcMvmt);
+        //print(pcMvmt);
         animator.SetFloat("Speed", Mathf.Abs(pcMvmt)); //if speed >.01(right) or <.01(left) on horizontal axis transition to run animation
 
 
@@ -65,28 +55,25 @@ public class CharacterController2D : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
+            
             if(jumpCnt < 1)
             {
                 jumpCnt++;
-            }
-            
-            
+            }   
             
         }
         if(IsGrounded())
         {
             jumpCnt=0;
-        }
-        
-
-        
+            
+        }   
     }
 
     void FixedUpdate() {
 
-        transform.position +=new Vector3(pcMvmt,0,0) * Time.deltaTime * mvmtSpeed;
+        transform.position +=new Vector3(pcMvmt,0,0) * Time.deltaTime * mvmtSpeed; //for horizontal movement
         
-        IsGrounded();
+        //IsGrounded();
         if(jump == true && jumpCnt == 0) 
         {
             rb2D.AddForce(new Vector2(0,jumpForce), ForceMode2D.Impulse); 
@@ -95,10 +82,7 @@ public class CharacterController2D : MonoBehaviour
         {
             rb2D.AddForce(new Vector2(0,dblJumpForce), ForceMode2D.Impulse);
         }
-        jump = false;
-        
-        
-        
+        jump = false;  
         
     }
 
@@ -111,6 +95,11 @@ public class CharacterController2D : MonoBehaviour
         
         if(grounded == true) {
             print("Player is grounded");
+            animator.SetBool("IsJumping", false);
+            
+        }
+        else{
+          animator.SetBool("IsJumping", true);  
         }
         return grounded;
     }
