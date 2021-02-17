@@ -145,16 +145,15 @@ Goals for Feb 17 - Mar10
     -   TODO: Creation of NPC characters that will attempt to move away
         from the character or any enemy. (CM)
 
--   Confidence Levels
 
-  Name       Confidence Level for Completion
-  ---------- ---------------------------------
-  Chance     3
+Confidence Level for Completion
+---------------------------------
+  Chance-3
   
-  Gage       ?
+  Gage-?
   
-  Sid        ?
+  Sid-?
   
-  Kaden      ?
+  Kaden-?
   
-  Average:   ?
+  Average:-?
