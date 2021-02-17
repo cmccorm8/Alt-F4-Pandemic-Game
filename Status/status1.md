@@ -150,7 +150,11 @@ Goals for Feb 17 - Mar10
   Name       Confidence Level for Completion
   ---------- ---------------------------------
   Chance     3
+  
   Gage       ?
+  
   Sid        ?
+  
   Kaden      ?
+  
   Average:   ?
