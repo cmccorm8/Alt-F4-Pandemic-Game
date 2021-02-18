@@ -150,10 +150,10 @@ Confidence Level for Completion
 ---------------------------------
   Chance-3
   
-  Gage-?
+  Gage-4
   
-  Sid-?
+  Sid-4
   
-  Kaden-?
+  Kaden-5
   
-  Average:-?
+  Average:-4
