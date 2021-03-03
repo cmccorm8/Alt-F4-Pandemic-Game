@@ -27,7 +27,6 @@ public class EnemyAI : MonoBehaviour
 
         InvokeRepeating("PathUpdate", 0f, .5f); // continuously updates the path
         
-        
     }
 
     void PathUpdate()       //Invoked by InvokeRepeating to test if pathfinding is complete. if not updates the path
@@ -67,6 +66,28 @@ public class EnemyAI : MonoBehaviour
         Vector2 direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
         Vector2 enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement
         Vector2 velocity = rb2D.velocity;
+
+        /*Vector3 enemyScale = enemyTarget.localScale;
+
+        if (direction[0] < 0)
+        {
+            if (enemyScale[0] > 0)
+            {
+                enemyScale[0] = -enemyScale[0];
+                enemyTarget.localScale = enemyScale;
+            }
+        }
+        else if (direction[0] >= 0)
+        {
+            if(enemyScale[0] < 0)
+            {
+                {
+                    enemyScale[0] = -enemyScale[0];
+                    enemyTarget.localScale = enemyScale;
+                }
+            }
+
+        }*/
         
         //rb2D.AddForce(enemyForce);
         velocity.x = enemyForce.x;
