@@ -6,7 +6,13 @@ public class Flip : MonoBehaviour
 {
     //public GameObject enemy;
     public Transform enemyTransform;
+
+    public Transform player;
     public Rigidbody2D enemyRigidbody;
+
+    public bool enemyFlipped = false;
+    
+  
 
     //GB: dummy enemy switches the direction of his velocity every 
     //    half second or so regardless of the direction it's actually
@@ -18,6 +24,7 @@ public class Flip : MonoBehaviour
     void Start()
     {
         counter = 0;
+        
     }
 
     // Update is called once per frame
@@ -25,8 +32,9 @@ public class Flip : MonoBehaviour
     {
         Vector2 velocity = enemyRigidbody.velocity;
         Vector3 enemyScale = enemyTransform.localScale;
+        
 
-        if ((velocity[0] < 0 && enemyScale[0] > 0) || (velocity[0] > 0 && enemyScale[0] < 0))
+        /*if ((velocity[0] < 0 && enemyScale[0] > 0) || (velocity[0] > 0 && enemyScale[0] < 0))
         {
             counter++;
         }
@@ -36,10 +44,26 @@ public class Flip : MonoBehaviour
             counter = 0;
             enemyScale[0] = -enemyScale[0];
             enemyTransform.localScale = enemyScale;
-        }
+        }*/
         /*else if (velocity > 0 && enemyScale < 0)
         {
             enemyScale[0] = -enemyScale[0];
         }*/
+
+        if(enemyTransform.position.x < player.position.x && enemyFlipped)
+        {
+            enemyTransform.localScale = enemyScale;
+            enemyTransform.Rotate(0f, 180f, 0f);
+            enemyFlipped = false;
+        }
+        else if(enemyTransform.position.x > player.position.x && !enemyFlipped)
+        {
+            enemyTransform.localScale = enemyScale;
+            enemyTransform.Rotate(0f, 180f, 0f);
+            enemyFlipped = true;
+        }
+
+
+
     }
 }
