@@ -6,21 +6,25 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     public Transform enemyTarget;
-    public Transform player;
+    //public Transform player;
 
     public float enemyMvmtSpeed = 200f;
     public float enemyMvmt = 0;
     public float nxtWayPoint = 3f;
 
-    Path path;
+    public Path path;
     int currWayPoint = 0;
-    bool endOfPath = false;
+    //bool endOfPath = false;
 
-    Seeker harryPotter;
-    Rigidbody2D rb2D;
+    public Seeker harryPotter;
+    public Rigidbody2D rb2D;
+
+    public Vector2 direction = new Vector2();
+    public Vector2 enemyForce;
+    public Vector2 velocity;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         harryPotter = GetComponent<Seeker>();   //Gets a A* seeker component
         rb2D = GetComponent<Rigidbody2D>();     //Gets a rigidbody2d component
@@ -47,13 +51,13 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if(path == null) // if no path return null
         {
             return;
         }
-        if(currWayPoint >= path.vectorPath.Count) // check if currWayPoint is at the end of calculated path
+        /*if(currWayPoint >= path.vectorPath.Count) // check if currWayPoint is at the end of calculated path
         {
             endOfPath = true;
             return;
@@ -61,33 +65,12 @@ public class EnemyAI : MonoBehaviour
         else
         {
             endOfPath = false;              //have not reached end of path
-        }
-
-        Vector2 direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
-        Vector2 enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement
-        Vector2 velocity = rb2D.velocity;
-
-        /*Vector3 enemyScale = enemyTarget.localScale;
-
-        if (direction[0] < 0)
-        {
-            if (enemyScale[0] > 0)
-            {
-                enemyScale[0] = -enemyScale[0];
-                enemyTarget.localScale = enemyScale;
-            }
-        }
-        else if (direction[0] >= 0)
-        {
-            if(enemyScale[0] < 0)
-            {
-                {
-                    enemyScale[0] = -enemyScale[0];
-                    enemyTarget.localScale = enemyScale;
-                }
-            }
-
         }*/
+
+        direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
+        enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement
+        velocity = rb2D.velocity;
+
         
         //rb2D.AddForce(enemyForce);
         velocity.x = enemyForce.x;

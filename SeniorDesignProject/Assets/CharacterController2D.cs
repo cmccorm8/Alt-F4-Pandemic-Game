@@ -11,23 +11,24 @@ public class CharacterController2D : MonoBehaviour
     public float dblJumpForce = 5f;
     private Rigidbody2D rb2D;
     private int jumpCnt;
-    bool jump = false;
+    private bool jump = false;
     public Transform groundCheck;
     public float groundRadius;
     public LayerMask ground;
     private bool grounded;
     private SpriteRenderer spriteRenderer;
+    public float infectionScore = 0;
     
     CharacterController2D controller;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         
         rb2D = GetComponent<Rigidbody2D>(); //gets a reference to a RigidBody2D object whenever a player is created
 
         animator.GetComponent<Animator>(); //animator component
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // used to flip sprite of main character
   
     }
 
@@ -56,7 +57,7 @@ public class CharacterController2D : MonoBehaviour
         {
             jump = true;
             
-            if(jumpCnt < 1)
+            if(jumpCnt < 2)
             {
                 jumpCnt++;
             }   
@@ -78,7 +79,7 @@ public class CharacterController2D : MonoBehaviour
         {
             rb2D.AddForce(new Vector2(0,jumpForce), ForceMode2D.Impulse); 
         }
-        else if((jump == true && jumpCnt < 1))
+        else if((jump == true && jumpCnt < 2))
         {
             rb2D.AddForce(new Vector2(0,dblJumpForce), ForceMode2D.Impulse);
         }
@@ -94,7 +95,7 @@ public class CharacterController2D : MonoBehaviour
          
         
         if(grounded == true) {
-            print("Player is grounded");
+            //print("Player is grounded");
             animator.SetBool("IsJumping", false);
             
         }
@@ -102,5 +103,15 @@ public class CharacterController2D : MonoBehaviour
           animator.SetBool("IsJumping", true);  
         }
         return grounded;
+    }
+
+    private void OnTriggerStay2D(Collider2D infected)
+    {
+        if(infected.tag == "Enemy")
+        {
+            infectionScore+=(float) 0.02;
+            //infectionScore = Mathf.Floor(infectionScore);
+            print("Infection Score " + Mathf.Floor(infectionScore));
+        }
     }
 }

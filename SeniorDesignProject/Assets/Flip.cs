@@ -19,11 +19,11 @@ public class Flip : MonoBehaviour
     //    walking in so I'm trying to account for that with a counter
     //    making sure the image doesn't flip just because the A* algo 
     //    is acting weird.
-    private int counter; 
+    //private int counter; 
 
     void Start()
     {
-        counter = 0;
+        //counter = 0;
         
     }
 
@@ -33,23 +33,7 @@ public class Flip : MonoBehaviour
         Vector2 velocity = enemyRigidbody.velocity;
         Vector3 enemyScale = enemyTransform.localScale;
         
-
-        /*if ((velocity[0] < 0 && enemyScale[0] > 0) || (velocity[0] > 0 && enemyScale[0] < 0))
-        {
-            counter++;
-        }
-
-        if(counter > 20)
-        {
-            counter = 0;
-            enemyScale[0] = -enemyScale[0];
-            enemyTransform.localScale = enemyScale;
-        }*/
-        /*else if (velocity > 0 && enemyScale < 0)
-        {
-            enemyScale[0] = -enemyScale[0];
-        }*/
-
+        //Rotates enemy based on player position
         if(enemyTransform.position.x < player.position.x && enemyFlipped)
         {
             enemyTransform.localScale = enemyScale;
