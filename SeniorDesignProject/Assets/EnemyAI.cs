@@ -14,12 +14,12 @@ public class EnemyAI : MonoBehaviour
 
     public Path path;
     int currWayPoint = 0;
-    //bool endOfPath = false;
+    bool endOfPath = false;
 
     public Seeker harryPotter;
     public Rigidbody2D rb2D;
 
-    public Vector2 direction = new Vector2();
+    public Vector2 direction;
     public Vector2 enemyForce;
     public Vector2 velocity;
 
@@ -30,6 +30,8 @@ public class EnemyAI : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();     //Gets a rigidbody2d component
 
         InvokeRepeating("PathUpdate", 0f, .5f); // continuously updates the path
+
+        harryPotter.StartPath(rb2D.position, enemyTarget.position, PathComplete);
         
     }
 
@@ -57,7 +59,8 @@ public class EnemyAI : MonoBehaviour
         {
             return;
         }
-        /*if(currWayPoint >= path.vectorPath.Count) // check if currWayPoint is at the end of calculated path
+        
+        if(currWayPoint >= path.vectorPath.Count) // check if currWayPoint is at the end of calculated path
         {
             endOfPath = true;
             return;
@@ -65,7 +68,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             endOfPath = false;              //have not reached end of path
-        }*/
+        }
 
         direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
         enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement

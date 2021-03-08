@@ -1531,6 +1531,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 1536
+  infectionScore: 0
 --- !u!58 &1294783555
 CircleCollider2D:
   m_ObjectHideFlags: 0
