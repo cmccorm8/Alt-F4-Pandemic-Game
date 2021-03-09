@@ -6,7 +6,7 @@ Recap of Second 3-Week Plan:
 
 The plan for this 3-week work period involved the continued improvement of the Character Controller and creation
 of more advanced Enemy AI. As well as continued work on enemy models and animations, level art creation, 
-level design, and implementation of audio resources.
+level design, and implementation of audio resources. Finally, work on menu and UI was to begin.
 
 
 -   Successes:
