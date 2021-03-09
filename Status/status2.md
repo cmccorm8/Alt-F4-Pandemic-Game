@@ -28,7 +28,13 @@ level design, and implementation of audio resources.
 			and to assist in the Advanced Enemy in moving over obstacles. These trigger events utilize CircleColliders2D
 			configured to act as a trigger. (\~8 hrs) (CM)
 
-    
+    -   Main Menu:
+
+        -	Main Screen was implemented and the have 3 options to choose from : New Game, Options and Quit Game. This was also added to the overall build setting.(\~4 hrs)(SM) 
+		
+	-   Pause Menu:
+
+        -	Pause Menu was implemented to use ESC key to pause the game during gameplay mode.(\~2 hrs)(SM)
 
 <!-- -->
 
@@ -47,6 +53,10 @@ level design, and implementation of audio resources.
 		get more busy making it harder  to contribute to this project at the same rate.
 
     -   Making a game is hard and it takes time with only 4 people.
+	
+	-   Due to this being the midterm month, individuals were busy with other courseworks and did not have enough time to contribute to this project.
+	
+	- Level 2 need more time as assets needs to be build for that level.
 
     
 
@@ -57,7 +67,8 @@ Goals for Mar 10 - Mar 31
 
 -   Art:
 
--   Level Design:
+-   Level Design: 
+    -   TODO: Need to work on Level 2 and need to add more artifacts to the level design so they look more fleshed out. (SM)
 
 
 -   Character Controller:
@@ -74,6 +85,9 @@ Goals for Mar 10 - Mar 31
         from the character or any enemy. (CM)
 		
 	-	An enemy "attack" script. (CM) 
+
+-   UI Design: 
+    -   TODO: Need to make a more elaborate version of the Main Menu and Pause Menu as well as add more functionality to the Options Menu as well as a Level Select Option.(SM)
 
 
 Confidence Level for Completion
