@@ -1525,7 +1525,7 @@ MonoBehaviour:
   mvmtSpeed: 12
   pcMvmt: 0
   jumpForce: 20
-  dblJumpForce: 20
+  dblJumpForce: 15
   groundCheck: {fileID: 463676291}
   groundRadius: 0.2
   ground:

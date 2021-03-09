@@ -81,7 +81,9 @@ public class CharacterController2D : MonoBehaviour
         }
         else if((jump == true && jumpCnt < 2))
         {
+            
             rb2D.AddForce(new Vector2(0,dblJumpForce), ForceMode2D.Impulse);
+            
         }
         jump = false;  
         
