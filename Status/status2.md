@@ -35,7 +35,8 @@ level design, and implementation of audio resources.
 	-   Pause Menu:
 
         -	Pause Menu was implemented to use ESC key to pause the game during gameplay mode.(\~2 hrs)(SM)
-
+    -   Audio:
+        -	Audio files and AudioManager implemented. (\~4 hrs)(KO)  	
 <!-- -->
 
 -   Challenges:
@@ -66,7 +67,11 @@ Goals for Mar 10 - Mar 31
 -   Animations:
 
 -   Art:
+   
+-   Audio:
+    -   TODO: Add more audio files, and make sure sound effects will persist through scene transitions. (KO)
 
+	
 -   Level Design: 
     -   TODO: Need to work on Level 2 and need to add more artifacts to the level design so they look more fleshed out. (SM)
 
@@ -98,6 +103,6 @@ Confidence Level for Completion
   
   Sid-4
   
-  Kaden-5
+  Kaden-4
   
   Average:-4
