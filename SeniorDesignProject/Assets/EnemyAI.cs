@@ -57,14 +57,12 @@ public class EnemyAI : MonoBehaviour
 
     private void AnimationHandler()
     {
-        if (velocity.x < 0)
-        {
-            animator.SetFloat("Speed", (-1 * velocity.x));
-        }
-        else
-        {
-            animator.SetFloat("Speed", velocity.x);
-        }
+        float temp = velocity.x * ((velocity.x < 0) ? -1 : 1);
+
+        //GB: Ignore random dips in velocity caused by the pathing algorithm.
+        //    These dips are usually around 1.0E-05 or 1.0E-06
+        if (temp > 1.0E-04) animator.SetFloat("Speed", temp);
+
     }
 
     // Update is called once per frame
