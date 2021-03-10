@@ -35,8 +35,52 @@ level design, and implementation of audio resources. Finally, work on menu and U
 	-   Pause Menu:
 
         -	Pause Menu was implemented to use ESC key to pause the game during gameplay mode.(\~2 hrs)(SM)
+
     -   Audio:
-        -	Audio files and AudioManager implemented. (\~4 hrs)(KO)  	
+
+        -	Audio files and AudioManager implemented. (\~4 hrs)(KO)  
+	
+	-	Art & Animation:
+
+		-	Learned how to use skeletal animation and implemented it in enemies with shopping
+			carts, this should cut back on time spent creating animations. At this resolution 
+			skeletal animations don’t seem to maintain quite as much detail as animations made 
+			with a sprite sheet, but simple animations can be created in a matter of minutes; 
+			considering the hours needed to create a decent sprite sheet followed by the hours 
+			of small tweaks and copious amounts of trial and error needed to fix graphical 
+			inconsistencies, I’d say the time lost in learning how to implement skeletal 
+			animations will pay off in the long run. (\~16 hrs)(GB)
+			
+			STRUGGLES: To the surprise of no one, implementing skeletal animations in Unity was 
+			neither easy nor intuitive. It turns out that most of the functionality used in the 
+			sprite editor to create the skeletal frame, like the preservation of separate layers,
+			just doesn’t work unless you’re using a specific photoshop file type called a PSB, 
+			which is just a standard photoshop file PSD but big. For some reason the package used
+			to import PSB files for use in the sprite editor is named 2D PSD Importer, the 2D PSD
+			Importer does not handle PSD files. Considering PSB files are only really used for 
+			projects too big to be saved as a PSD ( > 2GB ), the 2D PSD Importer’s inability to import 
+			PSD files makes about as much sense as naming the package after a file type it doesn’t
+			support. This is only made more frustrating by the fact that PSB is one of the only 
+			image file types that is not yet supported by Photoshop’s open source alternative — GIMP.
+			After an unfortunate amount of research and trial and error, I just renamed the PSD I 
+			exported from GIMP as a PSB and it worked perfectly. While the solution to the problem 
+			is simple, the file types being so similar that Unity can’t tell the difference between
+			a file actually saved in the PSB format and a PSD file renamed as a PSB just makes it all
+			the more frustrating that PSD files aren’t supported. 
+
+		-	Animation controller for enemy configured to allow for an idle and walk animation, plus
+ 			tweaks to the animations themself. (\~3 hrs)(GB)
+
+		-	Created tile assets for SuperMarket. (\~2 hrs)(GB)
+		
+		-	Implemented an animation flip for the enemy characters. (\~1 hrs)(GB)
+
+		-	Started to explore the idea of level lighting and started some early lighting implementation. 
+		 	(\~1 hr)(GB) 
+			
+		-	Enemy collision box no longer gets suck on the ground and the player collision box no longer
+			pushes the shopping cart collision box down into the ground when walking against it. 
+			(\~0.5 hrs)(GB)
 <!-- -->
 
 -   Challenges:
@@ -64,9 +108,13 @@ level design, and implementation of audio resources. Finally, work on menu and U
 Goals for Mar 10 - Mar 31
 
 
--   Animations:
-
--   Art:
+-   Art & Animation:
+	-	TODO: Add more enemy varients and animations. (GB)
+	-	TODO: Create a more modular enemy sprite project with lighter, neutral colored hair and shirts
+		separated into their own layers so that they can be colorized in Unity's sprite renderer for 
+		quick and easy non-player character diversification. (GB)
+	-	TODO: Clean up existing animations. (GB)
+	-	TODO: Create more assets for the Super Market level. (GB)
    
 -   Audio:
     -   TODO: Add more audio files, and make sure sound effects will persist through scene transitions. (KO)
