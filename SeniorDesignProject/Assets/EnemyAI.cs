@@ -23,6 +23,8 @@ public class EnemyAI : MonoBehaviour
     public Vector2 enemyForce;
     public Vector2 velocity;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -32,7 +34,8 @@ public class EnemyAI : MonoBehaviour
         InvokeRepeating("PathUpdate", 0f, .5f); // continuously updates the path
 
         harryPotter.StartPath(rb2D.position, enemyTarget.position, PathComplete);
-        
+
+        animator = GetComponent<Animator>();
     }
 
     void PathUpdate()       //Invoked by InvokeRepeating to test if pathfinding is complete. if not updates the path
@@ -49,6 +52,18 @@ public class EnemyAI : MonoBehaviour
         {
             path = p;
             currWayPoint = 0;
+        }
+    }
+
+    private void AnimationHandler()
+    {
+        if (velocity.x < 0)
+        {
+            animator.SetFloat("Speed", (-1 * velocity.x));
+        }
+        else
+        {
+            animator.SetFloat("Speed", velocity.x);
         }
     }
 
@@ -79,6 +94,8 @@ public class EnemyAI : MonoBehaviour
         velocity.x = enemyForce.x;
         rb2D.velocity = velocity;
         //Vector2.MoveTowards(rb2D.position, direction, enemyMvmtSpeed * Time.fixedDeltaTime);
+
+        AnimationHandler();
 
         float pathDistance = Vector2.Distance(rb2D.position, path.vectorPath[currWayPoint]);   //gets the path distance 
 

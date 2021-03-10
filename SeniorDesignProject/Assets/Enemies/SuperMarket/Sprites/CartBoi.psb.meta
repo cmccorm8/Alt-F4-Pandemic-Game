@@ -722,7 +722,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 77
+      x: 101
       y: 4
       width: 16
       height: 18
@@ -1320,7 +1320,7 @@ ScriptedImporter:
     - {x: 53, y: 7}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 56, y: -25}
+    uvTransform: {x: 80, y: -25}
   - name: BackLeg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1328,7 +1328,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 101
+      x: 77
       y: 4
       width: 16
       height: 18
@@ -1959,7 +1959,7 @@ ScriptedImporter:
     - {x: 56, y: 7}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 80, y: -25}
+    uvTransform: {x: 56, y: -24}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2511,7 +2511,18 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -8, y: 4}
-  platformSettings: []
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
@@ -2537,20 +2548,6 @@ ScriptedImporter:
     spriteID: 9547f718ecd8b3344aa456f5cb380aea
     layerID: 0
     mosaicPosition: {x: 4, y: 4}
-  - name: FrontLeg
-    spriteName: FrontLeg
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 026c222bc01628a409dfbb19168e615d
-    layerID: 933082743
-    mosaicPosition: {x: 77, y: 4}
-  - name: BackLeg
-    spriteName: BackLeg
-    isGroup: 0
-    parentIndex: -1
-    spriteID: c1e54714aedd67f42ae68a78f297c116
-    layerID: -121770015
-    mosaicPosition: {x: 101, y: 4}
   - name: Background
     spriteName: Background
     isGroup: 0
@@ -2558,6 +2555,20 @@ ScriptedImporter:
     spriteID: 1115c789252643a458cf68426de9a2a3
     layerID: 332801758
     mosaicPosition: {x: 4, y: 44}
+  - name: FrontLeg
+    spriteName: FrontLeg
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 026c222bc01628a409dfbb19168e615d
+    layerID: 933082743
+    mosaicPosition: {x: 101, y: 4}
+  - name: BackLeg
+    spriteName: BackLeg
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c1e54714aedd67f42ae68a78f297c116
+    layerID: -121770015
+    mosaicPosition: {x: 77, y: 4}
   characterData:
     bones:
     - name: bone_1
