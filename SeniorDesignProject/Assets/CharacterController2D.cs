@@ -107,7 +107,7 @@ public class CharacterController2D : MonoBehaviour
         return grounded;
     }
 
-    private void OnTriggerStay2D(Collider2D infected)
+   /* private void OnTriggerStay2D(Collider2D infected)
     {
         if(infected.tag == "Enemy")
         {
@@ -115,5 +115,5 @@ public class CharacterController2D : MonoBehaviour
             //infectionScore = Mathf.Floor(infectionScore);
             print("Infection Score " + Mathf.Floor(infectionScore));
         }
-    }
+    }*/
 }

@@ -42,11 +42,12 @@ public class AdvanceEnemyAI : EnemyAI
         }
     }
 
-    
+    /**
+    * IsGrounded is a utility function to test if an enemy is on the ground.
+    * Needed to prevent the enemy from being able to jump endlessely 
+    */
     private bool IsGrounded()
-    {
-        //float addHeight = .5f; //for any potential sloped ground
-        //enemyGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius+addHeight, ground);    
+    {    
         if(enemyGrounded == true) {
             //print("Enemy is grounded");
             canJump = true;   
@@ -57,6 +58,9 @@ public class AdvanceEnemyAI : EnemyAI
         return canJump;
     }
 
+    /**
+    * EnemyJump is a utility function that applies jump force to an enemy
+    */
     private void EnemyJump()
     {
         if(base.direction.y > jumpHeightTrigger)
@@ -67,9 +71,7 @@ public class AdvanceEnemyAI : EnemyAI
         }
 
     }
-
     
-
     private void OnTriggerStay2D(Collider2D collision) 
     {
         if(collision.tag == "Obstacle")

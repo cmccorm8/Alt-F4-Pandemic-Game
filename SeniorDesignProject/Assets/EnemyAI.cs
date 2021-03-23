@@ -6,23 +6,17 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     public Transform enemyTarget;
-    //public Transform player;
-
     public float enemyMvmtSpeed = 200f;
     public float enemyMvmt = 0;
     public float nxtWayPoint = 3f;
-
     public Path path;
     int currWayPoint = 0;
     bool endOfPath = false;
-
     public Seeker harryPotter;
     public Rigidbody2D rb2D;
-
     public Vector2 direction;
     public Vector2 enemyForce;
     public Vector2 velocity;
-
     private Animator animator;
 
     // Start is called before the first frame update
