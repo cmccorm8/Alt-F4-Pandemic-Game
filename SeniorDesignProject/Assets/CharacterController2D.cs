@@ -17,7 +17,7 @@ public class CharacterController2D : MonoBehaviour
     public LayerMask ground;
     private bool grounded;
     private SpriteRenderer spriteRenderer;
-    public float infectionScore = 0;
+    //public float infectionScore = 0;
     
     CharacterController2D controller;
     // Start is called before the first frame update

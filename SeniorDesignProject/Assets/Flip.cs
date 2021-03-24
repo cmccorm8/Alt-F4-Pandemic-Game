@@ -10,22 +10,8 @@ public class Flip : MonoBehaviour
     public Transform player;
     public Rigidbody2D enemyRigidbody;
 
-    public bool enemyFlipped = false;
-    
-  
-
-    //GB: dummy enemy switches the direction of his velocity every 
-    //    half second or so regardless of the direction it's actually
-    //    walking in so I'm trying to account for that with a counter
-    //    making sure the image doesn't flip just because the A* algo 
-    //    is acting weird.
-    //private int counter; 
-
-    void Start()
-    {
-        //counter = 0;
-        
-    }
+    private bool enemyFlipped = false;
+   
 
     // Update is called once per frame
     void Update()

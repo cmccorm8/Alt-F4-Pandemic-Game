@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     int currWayPoint = 0;
     bool endOfPath = false;
     public Seeker harryPotter;
-    public Rigidbody2D rb2D;
+    protected Rigidbody2D rb2D;
     public Vector2 direction;
     public Vector2 enemyForce;
     public Vector2 velocity;
@@ -60,7 +60,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         if(path == null) // if no path return null
         {
