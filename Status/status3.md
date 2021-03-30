@@ -21,9 +21,10 @@ Successes:
 
     -   NPC AI:
 
-        -   Implementation of a script to handle AI for NPC characters. The NPC will move in a direction until an obstacle or untraversable ground is encountered. 
-		When this occurs the NPC will move in the opposite direction. Additionally, the NPC will turn, stop, or walk in a particular direction at random, with the intention
-		to make the NPC's seem more realistic(\~7 hrs) (CM)
+        -  	Implementation of a script to handle AI for NPC characters. The NPC will move in a direction until an obstacle or 
+        	untraversable ground is encountered. When this occurs the NPC will move in the opposite direction. 
+		Additionally, the NPC will turn, stop, or walk in a particular direction at random, with the intention
+		to make the NPC's seem more realistic.(\~7 hrs) (CM)
 
     -   UI:
 
@@ -41,8 +42,7 @@ Challenges:
         remotely. Working remotely adds more challenges to a typical
         workflow and adds more time to a project.
 
-    -   The Unity learning curve is another challenge that we continue to face during 
-		work on our project.
+    -   The Unity learning curve is another challenge that we continue to face during work on our project.
 
     -   Time Constraints are another challenge as all in this group try
         to balance jobs and other senior level classes while trying to
@@ -57,7 +57,7 @@ Challenges:
 
     
 
-Goals for Mar 31 - April 21
+Goals for Mar 31 - April 21:
 ---------------------------------
 
 -   Art & Animation:
@@ -88,7 +88,7 @@ Goals for Mar 31 - April 21
     
 
 
-Confidence Level for Completion
+Confidence Level for Completion:
 ---------------------------------
   Chance-3
   
