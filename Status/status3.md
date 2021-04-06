@@ -31,7 +31,7 @@ Successes:
 
     -   Audio:
     
-    -	Art and Animation:
+    -   Art and Animation:
 
         -	Created a female NPC and walking animation. Started working in a higher resolution for character sprites to give 
 		more control over the details of the texture and lessen blury artifacts created around the character during rigged
