@@ -30,6 +30,7 @@ Successes:
 
 
     -   Audio:
+    	- 	Additional audio implemented. (\~3 hrs)(KO)
     
     -   Art and Animation:
 
