@@ -30,6 +30,7 @@ public class EnemyAI : MonoBehaviour
         harryPotter.StartPath(rb2D.position, enemyTarget.position, PathComplete);
 
         animator = GetComponent<Animator>();
+
     }
 
     void PathUpdate()       //Invoked by InvokeRepeating to test if pathfinding is complete. if not updates the path

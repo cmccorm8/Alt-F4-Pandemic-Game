@@ -26,7 +26,7 @@ public class CharacterController2D : MonoBehaviour
         
         rb2D = GetComponent<Rigidbody2D>(); //gets a reference to a RigidBody2D object whenever a player is created
 
-        animator.GetComponent<Animator>(); //animator component
+        //animator.GetComponent<Animator>(); //animator component
 
         spriteRenderer = GetComponent<SpriteRenderer>(); // used to flip sprite of main character
   
