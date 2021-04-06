@@ -4,8 +4,8 @@ using UnityEditor;
 public class ReplaceWithPrefab : EditorWindow
 {
     [SerializeField] private GameObject prefab;
-
     [MenuItem("Tools/Replace With Prefab")]
+
     static void CreateReplaceWithPrefab()
     {
         EditorWindow.GetWindow<ReplaceWithPrefab>();
@@ -13,14 +13,10 @@ public class ReplaceWithPrefab : EditorWindow
 
     private void OnGUI()
     {
-        
-
         prefab = (GameObject)EditorGUILayout.ObjectField("Prefab", prefab, typeof(GameObject), false);
 
         if (GUILayout.Button("Replace"))
         {
-
-
             if (!PrefabUtility.IsPartOfAnyPrefab(prefab))
             {
                 Debug.LogError("Not a valid prefab");
@@ -29,39 +25,15 @@ public class ReplaceWithPrefab : EditorWindow
 
             var selection = Selection.gameObjects;
 
-            for (var i = selection.Length - 1; i >= 0; --i)
+            for (var i = 0; i < selection.Length; i++)
             {
                 var selected = selection[i];
-                //var prefabType = PrefabUtility.GetPrefabType(prefab);
+
                 GameObject newObject;
 
-                /*if (prefabType == PrefabType.Prefab)
-                {
-                    newObject = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
-                }
-                else
-                {
-                    //newObject = Instantiate(prefab);
-                    newObject = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
-                    newObject.name = prefab.name;
-                }*/
-
-
-                //newObject = selected;
                 newObject = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
 
-
-
-                if (newObject == null)
-                {
-                    Debug.LogError("Error instantiating prefab");
-                    break;
-                }
-
                 Undo.RegisterCreatedObjectUndo(newObject, "Replace With Prefabs");
-
-
-                //var allComponents : Component[];
 
                 Component[] allComponents;
                 allComponents = selected.GetComponents(typeof(Component));
@@ -93,10 +65,6 @@ public class ReplaceWithPrefab : EditorWindow
 
                 newObject.GetComponent<EnemyAI>().enemyTarget = selected.GetComponent<EnemyAI>().enemyTarget;
                 newObject.GetComponent<EnemyAI>().enemyMvmtSpeed = selected.GetComponent<EnemyAI>().enemyMvmtSpeed;
-
-                //newObject.
-
-                //newObject.rigidbody2d.constraints = selected.rigidbody2d.constraints;
 
                 newObject.name = selected.name;
 
