@@ -84,8 +84,7 @@ Goals for Mar 31 - April 21:
     - TODO: Create more assets for level design, specifically for the super market (GB)
    
 -   Audio:
-    
-
+    - TODO: Continue adding audio as additional scenes/events are added (KO)
 	
 -   Level Design: 
     
