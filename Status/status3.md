@@ -1,7 +1,7 @@
 Video Overview:
 ---------------------------------
-
-
+The link :
+https://www.youtube.com/watch?v=7r1BfLwVdiM
 
 
 Recap of Third 3-Week Plan:
@@ -27,7 +27,10 @@ Successes:
 		to make the NPC's seem more realistic.(\~7 hrs) (CM)
 
     -   UI:
-
+        Added a more complex version of the Options part of the menu i.e. included a way to change resolution, tweak with graphical settings as well as volume control. (\~5 hrs)(SM)
+    
+	-   Level:
+	    Made a new level called the market with some illumination elements.  (\~4 hrs)(SM)
 
     -   Audio:
     	- 	Additional audio implemented. (\~3 hrs)(KO)
@@ -70,7 +73,7 @@ Challenges:
 
     -   Making a game is hard and it takes time with only 4 people.
     
-    -	
+    -	Working with free assets is kind of restrictive and making new art as a beginner is almost impossible without dedicating a good amount of your time.
 	
 	
 
@@ -89,7 +92,8 @@ Goals for Mar 31 - April 21:
 -   Level Design: 
     
     - 	TODO: Make significant progress towards the completion of the super market level (GB)
-    - 	TODO: Start work on other levels
+    
+	- 	TODO: Make the last level and finalize the game. (SM)
 
 -   Character Controller:
 
@@ -105,6 +109,9 @@ Goals for Mar 31 - April 21:
     -	TODO: An enemy "attack" script. (CM) 
 
 -   UI Design: 
+    
+	-	TODO: Add better UI elements to the interface part of the game. As of right now, they perform the task they are meant to but look visually unappealing. (SM) 
+	
     
 
 
