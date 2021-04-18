@@ -18,6 +18,9 @@ public class EnemyAI : MonoBehaviour
     public Vector2 enemyForce;
     public Vector2 velocity;
     private Animator animator;
+    private bool canSeePlayer = false;
+    public bool enemyGrounded=false;
+    public float timeInterval = 8.0f;
 
     // Start is called before the first frame update
     public void Start()
@@ -60,6 +63,31 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    private void enemyPursuit()
+    {
+        direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
+        enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement
+        velocity = rb2D.velocity;
+        velocity.x = enemyForce.x;
+        rb2D.velocity = velocity;
+
+    }
+
+    IEnumerator enemyStop()
+    {
+        
+        
+        yield return new WaitForSecondsRealtime(timeInterval);
+        canSeePlayer = false;
+        print("enemy has stopped");
+        
+        
+        enemyForce = direction * 0;       //for enemy horizontal movement
+        
+        velocity.x = 0;
+        
+    }
+
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -78,15 +106,19 @@ public class EnemyAI : MonoBehaviour
             endOfPath = false;              //have not reached end of path
         }
 
-        direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
-        enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement
-        velocity = rb2D.velocity;
+        if(canSeePlayer)
+        {
+            enemyPursuit();
+        }
+        else{
+            
+
+        }
+        
 
         
-        //rb2D.AddForce(enemyForce);
-        velocity.x = enemyForce.x;
-        rb2D.velocity = velocity;
-        //Vector2.MoveTowards(rb2D.position, direction, enemyMvmtSpeed * Time.fixedDeltaTime);
+        
+        
 
         AnimationHandler();
 
@@ -98,6 +130,36 @@ public class EnemyAI : MonoBehaviour
         }
 
 
+        
+    }
+
+   private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "ground" || collision.tag == "Obstacle")
+        {
+            enemyGrounded = true;
+            print("Enemy is Grounded");
+            
+        }
+        else if(collision.tag == "Player")
+        {
+            canSeePlayer = true;
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) 
+    {
+        if(collision.tag == "ground" || collision.tag == "Obstacle")
+        {
+            enemyGrounded = false;
+        }
+        else if(collision.tag == "Player")
+        {
+            
+            //canSeePlayer = false;
+           StartCoroutine(enemyStop()); 
+        }
         
     }
 }

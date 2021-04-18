@@ -13,7 +13,13 @@ public class Health : MonoBehaviour
             infectionScore+=(float) 0.02;
             //infectionScore = Mathf.Floor(infectionScore);
             //print("Infection Score " + Mathf.Floor(infectionScore));
-            print("Infection Score " + infectionScore);
+            //print("Infection Score " + infectionScore);
         }
+    }
+
+    private void OnTriggerExit(Collider infected) 
+    {
+        infectionScore+=0;
+        
     }
 }

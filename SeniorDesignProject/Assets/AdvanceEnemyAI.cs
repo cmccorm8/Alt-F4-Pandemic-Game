@@ -8,7 +8,7 @@ using UnityEngine;
 public class AdvanceEnemyAI : EnemyAI
 {
     //public EnemyAI advancedEnemy = new EnemyAI();
-    public bool enemyGrounded=false;
+    //public bool enemyGrounded=false;
     public bool canJump = false;
     //public int enemyjumpCnt=0;
     public float jumpForce = 100f;
@@ -72,7 +72,7 @@ public class AdvanceEnemyAI : EnemyAI
 
     }
     
-    private void OnTriggerStay2D(Collider2D collision) 
+    /*private void OnTriggerStay2D(Collider2D collision) 
     {
         if(collision.tag == "Obstacle")
         {
@@ -82,9 +82,9 @@ public class AdvanceEnemyAI : EnemyAI
             
         }
 
-    }
+    }*/
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "ground" || collision.tag == "Obstacle")
         {
@@ -93,14 +93,14 @@ public class AdvanceEnemyAI : EnemyAI
             
         }
         
-    }
+    }*/
 
-    private void OnTriggerExit2D(Collider2D collision) 
+    /*private void OnTriggerExit2D(Collider2D collision) 
     {
         if(collision.tag == "ground" || collision.tag == "Obstacle")
         {
             enemyGrounded = false;
         }
         
-    }
+    }*/
 }

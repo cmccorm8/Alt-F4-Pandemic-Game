@@ -831,13 +831,14 @@ GameObject:
   - component: {fileID: 1201475856}
   - component: {fileID: 1201475857}
   - component: {fileID: 1201475858}
+  - component: {fileID: 1201475859}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1201475849
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -862,7 +863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201475848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.8, y: -0.1, z: 1}
+  m_LocalPosition: {x: -9.64, y: -1.34, z: 1}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 961105480}
@@ -940,7 +941,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201475848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba1fc6d670bce14418119ca2a035f862, type: 3}
   m_Name: 
@@ -954,6 +955,7 @@ MonoBehaviour:
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
   enemyGrounded: 0
+  timeInterval: 8
   canJump: 0
   jumpForce: 100
   jumpHeightTrigger: 0.5
@@ -969,7 +971,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201475848}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c77e0d1f2fd1b2441b896213c931938d, type: 3}
   m_Name: 
@@ -982,6 +984,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 5
 --- !u!58 &1201475856
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1033,6 +1037,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &1201475859
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201475848}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &1216431728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1725,7 @@ GameObject:
   - component: {fileID: 1798348421}
   - component: {fileID: 1798348420}
   - component: {fileID: 1798348419}
+  - component: {fileID: 1798348422}
   m_Layer: 8
   m_Name: NPC
   m_TagString: NPC
@@ -1773,6 +1794,22 @@ CircleCollider2D:
   m_Offset: {x: 0.067735225, y: 0.3205635}
   serializedVersion: 2
   m_Radius: 0.3611954
+--- !u!58 &1798348422
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798348418}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2, y: 0.7}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!50 &1798348423
 Rigidbody2D:
   serializedVersion: 4

@@ -385,6 +385,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &105508711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +464,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1161354352}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &105508716
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105508708}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &151985279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1273,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &307205172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1365,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1068157122}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &307205177
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307205169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &311280722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1742,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &505702267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,6 +1821,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 468877189}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &505702272
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505702264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1001 &536710035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2303,6 +2357,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &662357270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,6 +2449,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 536710035}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &662357275
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662357267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &672656956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,6 +2987,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &872408502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2992,6 +3066,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 633495858}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &872408507
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872408499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &881320774
 GameObject:
   m_ObjectHideFlags: 0
@@ -50063,6 +50153,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lady
       objectReference: {fileID: 0}
+    - target: {fileID: 1156075781264282184, guid: 9c12cdacd2078294d8ed1b0e169f6036,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2500346723315767738, guid: 9c12cdacd2078294d8ed1b0e169f6036,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -50471,6 +50566,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!50 &1590711504
 Rigidbody2D:
   serializedVersion: 4
@@ -51083,6 +51180,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &1898610866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51160,6 +51259,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1325002637}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1898610871
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898610863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &1901438263
 GameObject:
   m_ObjectHideFlags: 0
@@ -51527,6 +51642,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &2117616132
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117616128}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.25, y: 0.75}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1839735485 &2117616133
 Tilemap:
   m_ObjectHideFlags: 0
@@ -51585,6 +51716,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  enemyGrounded: 0
+  timeInterval: 8
 --- !u!114 &2117616135
 MonoBehaviour:
   m_ObjectHideFlags: 0

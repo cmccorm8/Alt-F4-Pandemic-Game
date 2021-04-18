@@ -166,6 +166,7 @@ public class NPCAI : MonoBehaviour
         {
             obstructed = true;
         }
+        
 
 
         return obstructed;
@@ -197,6 +198,24 @@ public class NPCAI : MonoBehaviour
 
 
         return atEdge;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            Flip();
+        }
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) 
+    {
+        if(collision.tag == "Enemy")
+        {
+            Flip();
+        }
+        
     }
 
     
