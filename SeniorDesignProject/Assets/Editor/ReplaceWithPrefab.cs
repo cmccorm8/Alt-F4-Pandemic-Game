@@ -57,6 +57,10 @@ public class ReplaceWithPrefab : EditorWindow
                 newObject.GetComponent<CircleCollider2D>().offset = selected.GetComponent<CircleCollider2D>().offset;
                 newObject.GetComponent<CircleCollider2D>().isTrigger = selected.GetComponent<CircleCollider2D>().isTrigger;
 
+                newObject.GetComponent<BoxCollider2D>().offset = selected.GetComponent<BoxCollider2D>().offset;
+                newObject.GetComponent<BoxCollider2D>().size = selected.GetComponent<BoxCollider2D>().size;
+                newObject.GetComponent<BoxCollider2D>().isTrigger = selected.GetComponent<BoxCollider2D>().isTrigger;
+
                 newObject.GetComponent<Animator>().runtimeAnimatorController = selected.GetComponent<Animator>().runtimeAnimatorController;
 
                 newObject.GetComponent<Flip>().enemyTransform = newObject.GetComponent<Transform>();

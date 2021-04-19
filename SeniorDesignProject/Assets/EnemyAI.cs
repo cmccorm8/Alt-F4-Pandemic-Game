@@ -19,7 +19,8 @@ public class EnemyAI : MonoBehaviour
     public Vector2 velocity;
     private Animator animator;
     private bool canSeePlayer = false;
-    public bool enemyGrounded=false;
+    private bool playerLost = false;
+    public bool enemyGrounded = false;
     public float timeInterval = 8.0f;
 
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class EnemyAI : MonoBehaviour
 
         animator = GetComponent<Animator>();
 
+        velocity = rb2D.velocity;
     }
 
     void PathUpdate()       //Invoked by InvokeRepeating to test if pathfinding is complete. if not updates the path
@@ -57,10 +59,13 @@ public class EnemyAI : MonoBehaviour
     {
         float temp = velocity.x * ((velocity.x < 0) ? -1 : 1);
 
+        /*GB: Hopefully, this is no longer needed.
         //GB: Ignore random dips in velocity caused by the pathing algorithm.
         //    These dips are usually around 1.0E-05 or 1.0E-06
         if (temp > 1.0E-04) animator.SetFloat("Speed", temp);
+        */
 
+        animator.SetFloat("Speed", temp);
     }
 
     private void enemyPursuit()
@@ -70,13 +75,10 @@ public class EnemyAI : MonoBehaviour
         velocity = rb2D.velocity;
         velocity.x = enemyForce.x;
         rb2D.velocity = velocity;
-
     }
 
     IEnumerator enemyStop()
     {
-        
-        
         yield return new WaitForSecondsRealtime(timeInterval);
         canSeePlayer = false;
         print("enemy has stopped");
@@ -85,8 +87,20 @@ public class EnemyAI : MonoBehaviour
         enemyForce = direction * 0;       //for enemy horizontal movement
         
         velocity.x = 0;
-        
     }
+
+    /*GB
+    private void enemyStop()
+    {
+        //yield return new WaitForSecondsRealtime(timeInterval);
+        canSeePlayer = false;
+        playerLost = false;
+        print("enemy has stopped");
+
+        enemyForce = direction * 0;       //for enemy horizontal movement
+
+        velocity.x = 0;
+    }*/
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -106,19 +120,17 @@ public class EnemyAI : MonoBehaviour
             endOfPath = false;              //have not reached end of path
         }
 
-        if(canSeePlayer)
+        if (canSeePlayer) enemyPursuit();
+
+        /*GB
+        if (playerLost)
+        {
+            enemyStop();
+        }
+        else if (canSeePlayer)
         {
             enemyPursuit();
-        }
-        else{
-            
-
-        }
-        
-
-        
-        
-        
+        }*/
 
         AnimationHandler();
 
@@ -128,9 +140,6 @@ public class EnemyAI : MonoBehaviour
         {
             currWayPoint++;
         }
-
-
-        
     }
 
    private void OnTriggerEnter2D(Collider2D collision)
@@ -156,9 +165,8 @@ public class EnemyAI : MonoBehaviour
         }
         else if(collision.tag == "Player")
         {
-            
-            //canSeePlayer = false;
-           StartCoroutine(enemyStop()); 
+            //playerLost = true;
+            StartCoroutine(enemyStop());
         }
         
     }
