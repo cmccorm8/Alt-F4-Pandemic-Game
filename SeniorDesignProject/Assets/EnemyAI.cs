@@ -77,7 +77,7 @@ public class EnemyAI : MonoBehaviour
         rb2D.velocity = velocity;
     }
 
-    IEnumerator enemyStop()
+    /*IEnumerator enemyStop()
     {
         yield return new WaitForSecondsRealtime(timeInterval);
         canSeePlayer = false;
@@ -87,9 +87,9 @@ public class EnemyAI : MonoBehaviour
         enemyForce = direction * 0;       //for enemy horizontal movement
         
         velocity.x = 0;
-    }
+    }*/
 
-    /*GB
+    
     private void enemyStop()
     {
         //yield return new WaitForSecondsRealtime(timeInterval);
@@ -100,7 +100,7 @@ public class EnemyAI : MonoBehaviour
         enemyForce = direction * 0;       //for enemy horizontal movement
 
         velocity.x = 0;
-    }*/
+    }
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -120,9 +120,9 @@ public class EnemyAI : MonoBehaviour
             endOfPath = false;              //have not reached end of path
         }
 
-        if (canSeePlayer) enemyPursuit();
+        //if (canSeePlayer) enemyPursuit();
 
-        /*GB
+        
         if (playerLost)
         {
             enemyStop();
@@ -130,7 +130,7 @@ public class EnemyAI : MonoBehaviour
         else if (canSeePlayer)
         {
             enemyPursuit();
-        }*/
+        }
 
         AnimationHandler();
 
@@ -165,8 +165,8 @@ public class EnemyAI : MonoBehaviour
         }
         else if(collision.tag == "Player")
         {
-            //playerLost = true;
-            StartCoroutine(enemyStop());
+            playerLost = true;
+            //StartCoroutine(enemyStop());
         }
         
     }

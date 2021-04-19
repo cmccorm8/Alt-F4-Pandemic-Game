@@ -2994,7 +2994,7 @@ MonoBehaviour:
   enemyForce: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
   enemyGrounded: 0
-  timeInterval: 8
+  timeInterval: 4
 --- !u!114 &777498253
 MonoBehaviour:
   m_ObjectHideFlags: 0
