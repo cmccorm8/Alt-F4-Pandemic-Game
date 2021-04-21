@@ -30,23 +30,9 @@ Successes:
     
     -   Art and Animation:
 
-        -	Created a female NPC and walking animation. Started working in a higher resolution for character sprites to give 
-		more control over the details of the texture and lessen blury artifacts created around the character during rigged
-		animations. (\~8 hrs)(GB)
-		
-        -	Used the GIMP project file for the female NPC to create a templated way to add variations for the female NPCs. Currently
-		this includes 3 hair, 4 shirt, 2 skintone, and 2 pants variants as well as masked and unmasked options. (\~5 hrs)(GB)
-		
-        -	After discovering the lack of ease with which one can replace the prefab root of a game object while maintaining that 
-		object's component information, my plans for easily swapped out sprites for simililarly sized and animated characters
-		became less feasable. So I had to add this functionality into unity myself, I added a tool that allows you to select a 
-		prefab and then select any number of game objects and replace the prefabs of these game objects with one of your choosing.
-		While it maintains the component information of my female NPCs, it is by no means a universally applicable solution for this
-		problem, this is because Unity also lacks the simple functionality of being able to copy components from object to another 
-		through scripting. Because of this, only the component information that I knew needed copied over in my female NPC templates
-		are preserved by this script after an objects prefab has been changed. (\~3.5 hrs)(GB)
-		
-        -	Created some level assets for supermarket. (\~0.5 hrs)(GB)
+        -	Created more assets for level design, these include: shelf variations, shelf endings, out of toilet paper signs, and a pack of toilet paper.  (\~5 hrs)(GB)
+
+        -	Implemented an animation controller for the new NPCs and got it working with the new enemy AI  (\~3 hrs)(GB)
 
 
 
@@ -79,14 +65,14 @@ Goals for Mar 31 - April 21:
 
 -   Art & Animation:
 
-    - TODO: Create more assets for level design, specifically for the super market (GB)
+    - TODO: Finish the male NPCs (GB)
    
 -   Audio:
     - TODO: Continue adding audio as additional scenes/events are added (KO)
 	
 -   Level Design: 
     
-    - 	TODO: Make significant progress towards the completion of the super market level (GB)
+    - 	TODO: Finish the super market level (GB)
     
 	- 	TODO: Make the last level and finalize the game. (SM)
 
