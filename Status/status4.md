@@ -20,10 +20,9 @@ Successes:
 		When the player enters the collider, the enemy will begin pursuit. When the player exits the collider, the enemy will stop pursuit.(\~4 hrs) (CM)
 
     -   UI:
-        Added a more complex version of the Options part of the menu i.e. included a way to change resolution, tweak with graphical settings as well as volume control. (\~5 hrs)(SM)
+        -    Added a more complex infection rate bar which acts like a Heatlh Bar and changes color based on how much infected the player character is.(\~4 hrs)(SM)
+		-    Added a background and more functionality to the Main Menu.(\~2 hrs)(SM)
     
-	-   Level:
-	    Made a new level called the market with some illumination elements.  (\~4 hrs)(SM)
 
     -   Audio:
     	- 	Additional audio implemented. (\~3 hrs)(KO)
@@ -60,7 +59,7 @@ Challenges:
 
     
 
-Goals for Mar 31 - April 21:
+Goals for Apr 21 - Final Demo:
 ---------------------------------
 
 -   Art & Animation:
@@ -74,7 +73,7 @@ Goals for Mar 31 - April 21:
     
     - 	TODO: Finish the super market level (GB)
     
-	- 	TODO: Make the last level and finalize the game. (SM)
+	- 	TODO: Make sure no assets are conflicting with one another. (SM)
 
 -   Character Controller:
 
@@ -87,7 +86,7 @@ Goals for Mar 31 - April 21:
 
 -   UI Design: 
     
-	-	TODO: Add better UI elements to the interface part of the game. As of right now, they perform the task they are meant to but look visually unappealing. (SM) 
+	-	TODO: Tweak with the UI as much as I can with the amount of time left. (SM) 
 	
     
 
@@ -103,3 +102,10 @@ Confidence Level for Completion:
   Kaden-4
   
   Average:-4
+  
+ Reference Used during the Game Development:
+--------------------------------- 
+
+Gepp, A., 2021. [online] Available at: <https://pixabay.com/photos/medicine-mask-coronavirus-doctor-5103043/> [Accessed 21 April 2021].
+
+  
