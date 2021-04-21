@@ -25,7 +25,7 @@ Successes:
     
 
     -   Audio:
-    	- 	Additional audio implemented. (\~3 hrs)(KO)
+    	- 	Audio added into the Supermarket level. (\~3 hrs)(KO)
     
     -   Art and Animation:
 
@@ -67,7 +67,7 @@ Goals for Apr 21 - Final Demo:
     - TODO: Finish the male NPCs (GB)
    
 -   Audio:
-    - TODO: Continue adding audio as additional scenes/events are added (KO)
+    - TODO: Finish implementing audio (KO)
 	
 -   Level Design: 
     
