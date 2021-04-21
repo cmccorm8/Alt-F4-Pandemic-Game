@@ -36,10 +36,10 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         //for the horizontal movement
-        pcMvmt = Input.GetAxis("Horizontal"); 
-        
+        pcMvmt = Input.GetAxis("Horizontal");
+
         //flip the sprit based on right or left
-        if(pcMvmt < 0)
+        if (pcMvmt < 0)
         {
             spriteRenderer.flipX = true;
         }
@@ -47,6 +47,8 @@ public class CharacterController2D : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        
         
         //print(pcMvmt);
         animator.SetFloat("Speed", Mathf.Abs(pcMvmt)); //if speed >.01(right) or <.01(left) on horizontal axis transition to run animation
@@ -56,8 +58,7 @@ public class CharacterController2D : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
-            
-            if(jumpCnt < 2)
+            if (jumpCnt < 2)
             {
                 jumpCnt++;
             }   
@@ -77,7 +78,7 @@ public class CharacterController2D : MonoBehaviour
         //IsGrounded();
         if(jump == true && jumpCnt == 0) 
         {
-            rb2D.AddForce(new Vector2(0,jumpForce), ForceMode2D.Impulse); 
+            rb2D.AddForce(new Vector2(0,jumpForce), ForceMode2D.Impulse);
         }
         else if((jump == true && jumpCnt < 2))
         {
