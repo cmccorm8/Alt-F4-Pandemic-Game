@@ -17,8 +17,9 @@ public class CharacterController2D : MonoBehaviour
     public LayerMask ground;
     private bool grounded;
     private SpriteRenderer spriteRenderer;
+    public InfectionMeter infection;
     //public float infectionScore = 0;
-    
+
     CharacterController2D controller;
     // Start is called before the first frame update
     void Start()
@@ -108,13 +109,16 @@ public class CharacterController2D : MonoBehaviour
         return grounded;
     }
 
-   /* private void OnTriggerStay2D(Collider2D infected)
+    int temp = 0;
+
+    private void OnTriggerStay2D(Collider2D infected)
     {
-        if(infected.tag == "Enemy")
+        if (infected.tag == "Enemy")
         {
-            infectionScore+=(float) 0.02;
+            temp++;
+            infection.add(1);
             //infectionScore = Mathf.Floor(infectionScore);
-            print("Infection Score " + Mathf.Floor(infectionScore));
+            //print("Infection Score " + temp);
         }
-    }*/
+    }
 }
