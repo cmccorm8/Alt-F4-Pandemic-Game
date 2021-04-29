@@ -18,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
     private bool grounded;
     private SpriteRenderer spriteRenderer;
     public InfectionMeter infection;
-    public Transform playerTransform;
+    private Transform playerTransform;
 
     private bool flipped = false;
     //public float infectionScore = 0;
@@ -27,7 +27,7 @@ public class CharacterController2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerTransform = GetComponent<Transform>();
         rb2D = GetComponent<Rigidbody2D>(); //gets a reference to a RigidBody2D object whenever a player is created
 
         //animator.GetComponent<Animator>(); //animator component
