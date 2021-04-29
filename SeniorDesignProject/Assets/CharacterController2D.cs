@@ -18,6 +18,9 @@ public class CharacterController2D : MonoBehaviour
     private bool grounded;
     private SpriteRenderer spriteRenderer;
     public InfectionMeter infection;
+    public Transform playerTransform;
+
+    private bool flipped = false;
     //public float infectionScore = 0;
 
     CharacterController2D controller;
@@ -33,13 +36,31 @@ public class CharacterController2D : MonoBehaviour
   
     }
 
+    private void Flip()
+    {
+        Vector3 scale = playerTransform.localScale;
+
+        if (pcMvmt < 0 && !flipped)
+        {
+            playerTransform.localScale = new Vector3((-1 * scale.x), scale.y, scale.z);
+            flipped = true;
+        }
+        else if (pcMvmt > 0 && flipped)
+        {
+            playerTransform.localScale = new Vector3((-1 * scale.x), scale.y, scale.z);
+            flipped = false;
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
         //for the horizontal movement
         pcMvmt = Input.GetAxis("Horizontal");
 
-        //flip the sprit based on right or left
+        Flip();
+        /*//flip the sprit based on right or left
         if (pcMvmt < 0)
         {
             spriteRenderer.flipX = true;
@@ -47,7 +68,7 @@ public class CharacterController2D : MonoBehaviour
         else 
         {
             spriteRenderer.flipX = false;
-        }
+        }*/
 
         
         
