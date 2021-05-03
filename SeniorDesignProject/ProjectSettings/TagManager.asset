@@ -8,7 +8,6 @@ TagManager:
   - Obstacle
   - ground
   - NPC
-  - Collectible
   layers:
   - Default
   - TransparentFX

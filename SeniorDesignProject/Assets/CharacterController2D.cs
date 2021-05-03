@@ -22,7 +22,6 @@ public class CharacterController2D : MonoBehaviour
 
     private bool flipped = false;
     //public float infectionScore = 0;
-    public int tpValue = 1;
 
     CharacterController2D controller;
     // Start is called before the first frame update
@@ -141,16 +140,6 @@ public class CharacterController2D : MonoBehaviour
             infection.add(1);
             //infectionScore = Mathf.Floor(infectionScore);
             //print("Infection Score " + temp);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Collectible")
-        {
-            print("TP collected");
-            Destroy(collision.gameObject);
-            ItemManager.itemManager.UpdateScore(tpValue);
         }
     }
 }
