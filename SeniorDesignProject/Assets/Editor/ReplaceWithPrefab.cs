@@ -35,14 +35,14 @@ public class ReplaceWithPrefab : EditorWindow
 
                 Undo.RegisterCreatedObjectUndo(newObject, "Replace With Prefabs");
 
-                Component[] allComponents;
+                /*Component[] allComponents;
                 allComponents = selected.GetComponents(typeof(Component));
 
                 for(int j = 0; j < allComponents.Length; j++)
                 {
                     var c = allComponents[j];
                     newObject.AddComponent(c.GetType());
-                }
+                }*/
 
                 newObject.transform.parent = selected.transform.parent;
                 newObject.transform.localPosition = selected.transform.localPosition;
@@ -50,27 +50,28 @@ public class ReplaceWithPrefab : EditorWindow
                 newObject.transform.localScale = selected.transform.localScale;
                 newObject.transform.SetSiblingIndex(selected.transform.GetSiblingIndex());
 
-                newObject.GetComponent<Rigidbody2D>().gravityScale = selected.GetComponent<Rigidbody2D>().gravityScale;
+                /*newObject.GetComponent<Rigidbody2D>().gravityScale = selected.GetComponent<Rigidbody2D>().gravityScale;
                 newObject.GetComponent<Rigidbody2D>().freezeRotation = selected.GetComponent<Rigidbody2D>().freezeRotation;
                 
                 newObject.GetComponent<CircleCollider2D>().radius = selected.GetComponent<CircleCollider2D>().radius;
                 newObject.GetComponent<CircleCollider2D>().offset = selected.GetComponent<CircleCollider2D>().offset;
-                newObject.GetComponent<CircleCollider2D>().isTrigger = selected.GetComponent<CircleCollider2D>().isTrigger;
+                newObject.GetComponent<CircleCollider2D>().isTrigger = selected.GetComponent<CircleCollider2D>().isTrigger;*/
 
-                newObject.GetComponent<BoxCollider2D>().offset = selected.GetComponent<BoxCollider2D>().offset;
+                /*newObject.GetComponent<BoxCollider2D>().offset = selected.GetComponent<BoxCollider2D>().offset;
                 newObject.GetComponent<BoxCollider2D>().size = selected.GetComponent<BoxCollider2D>().size;
-                newObject.GetComponent<BoxCollider2D>().isTrigger = selected.GetComponent<BoxCollider2D>().isTrigger;
+                newObject.GetComponent<BoxCollider2D>().isTrigger = selected.GetComponent<BoxCollider2D>().isTrigger;*/
 
-                newObject.GetComponent<Animator>().runtimeAnimatorController = selected.GetComponent<Animator>().runtimeAnimatorController;
+                //newObject.GetComponent<Animator>().runtimeAnimatorController = selected.GetComponent<Animator>().runtimeAnimatorController;
 
-                newObject.GetComponent<Flip>().enemyTransform = newObject.GetComponent<Transform>();
-                newObject.GetComponent<Flip>().player = selected.GetComponent<Flip>().player;
-                newObject.GetComponent<Flip>().enemyRigidbody = newObject.GetComponent<Rigidbody2D>();
+                //newObject.GetComponent<Flip>().player = selected.GetComponent<Flip>().player;
 
-                newObject.GetComponent<EnemyAI>().enemyTarget = selected.GetComponent<EnemyAI>().enemyTarget;
-                newObject.GetComponent<EnemyAI>().enemyMvmtSpeed = selected.GetComponent<EnemyAI>().enemyMvmtSpeed;
+                //newObject.GetComponent<EnemyAI>().enemyTarget = selected.GetComponent<EnemyAI>().enemyTarget;
 
                 newObject.name = selected.name;
+
+                //newObject.layer = LayerMask.NameToLayer("Enemy");
+                //newObject.layer = selected.layer;
+                //newObject.tag = selected.tag;
 
                 Undo.DestroyObjectImmediate(selected);
             }

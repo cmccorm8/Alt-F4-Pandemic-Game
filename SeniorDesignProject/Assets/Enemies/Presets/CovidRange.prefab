@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7552978215759637345}
   - component: {fileID: 1987334371633976347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CovidRange
   m_TagString: Enemy
   m_Icon: {fileID: 0}

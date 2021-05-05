@@ -7,7 +7,7 @@ public class NPCAI : MonoBehaviour
     Flip flip;
     private Rigidbody2D rb2D;
     private Animator animator;
-    public float npcMvmtSpeed = 5;
+    private float npcMvmtSpeed = 5;
     //private Vector2 velocity;
     //private Vector2 npcForce;
     private Vector3 npcScale;

@@ -5,18 +5,18 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform enemyTarget;
-    public float enemyMvmtSpeed = 200f;
-    public float enemyMvmt = 0;
-    public float nxtWayPoint = 3f;
+    private Transform enemyTarget;
+    private float enemyMvmtSpeed = 400f;
+    private float enemyMvmt = 0;
+    private float nxtWayPoint = 3f;
     public Path path;
     int currWayPoint = 0;
     bool endOfPath = false;
-    public Seeker harryPotter;
+    private Seeker harryPotter;
     protected Rigidbody2D rb2D;
-    public Vector2 direction;
-    public Vector2 enemyForce;
-    public Vector2 velocity;
+    protected Vector2 direction;
+    protected Vector2 enemyForce;
+    protected Vector2 velocity;
     private Animator animator;
     private bool canSeePlayer = false;
     private bool playerLost = false;
@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        enemyTarget = GameObject.Find("Main Character").GetComponent<Transform>();
         harryPotter = GetComponent<Seeker>();   //Gets a A* seeker component
         rb2D = GetComponent<Rigidbody2D>();     //Gets a rigidbody2d component
 
@@ -123,6 +124,7 @@ public class EnemyAI : MonoBehaviour
         //if (canSeePlayer) enemyPursuit();
 
         
+        
         if (playerLost)
         {
             enemyStop();
@@ -163,7 +165,7 @@ public class EnemyAI : MonoBehaviour
         {
             enemyGrounded = false;
         }
-        else if(collision.tag == "Player")
+        else if(collision.tag == "Agro")
         {
             playerLost = true;
             //StartCoroutine(enemyStop());

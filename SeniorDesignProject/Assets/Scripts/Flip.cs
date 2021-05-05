@@ -5,13 +5,21 @@ using UnityEngine;
 public class Flip : MonoBehaviour
 {
     //public GameObject enemy;
-    public Transform enemyTransform;
+    private Transform enemyTransform;
+    private Rigidbody2D enemyRigidbody;
 
     public Transform player;
-    public Rigidbody2D enemyRigidbody;
 
     private bool enemyFlipped = false;
-   
+    
+
+    void Start()
+    {
+        player = GameObject.Find("Main Character").GetComponent<Transform>();
+
+        enemyTransform = GetComponent<Transform>();
+        enemyRigidbody = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()

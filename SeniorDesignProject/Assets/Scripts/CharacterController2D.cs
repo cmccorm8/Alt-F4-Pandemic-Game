@@ -18,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
     private bool grounded;
     private SpriteRenderer spriteRenderer;
     public InfectionMeter infection;
-    private Transform playerTransform;
+    public Transform playerTransform;
 
     private bool flipped = false;
     //public float infectionScore = 0;
