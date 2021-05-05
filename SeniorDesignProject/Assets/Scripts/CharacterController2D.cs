@@ -34,7 +34,10 @@ public class CharacterController2D : MonoBehaviour
         //animator.GetComponent<Animator>(); //animator component
 
         spriteRenderer = GetComponent<SpriteRenderer>(); // used to flip sprite of main character
-  
+
+        /*Physics2D.IgnoreLayerCollision(8, 12);
+        Physics2D.IgnoreLayerCollision(12, 12);*/
+
     }
 
     private void Flip()

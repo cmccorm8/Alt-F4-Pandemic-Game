@@ -6,13 +6,8 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     private Transform enemyTarget;
-    private float enemyMvmtSpeed = 400f;
+    private float enemyMvmtSpeed = 300f;
     private float enemyMvmt = 0;
-    private float nxtWayPoint = 3f;
-    public Path path;
-    int currWayPoint = 0;
-    bool endOfPath = false;
-    private Seeker harryPotter;
     protected Rigidbody2D rb2D;
     protected Vector2 direction;
     protected Vector2 enemyForce;
@@ -23,73 +18,35 @@ public class EnemyAI : MonoBehaviour
     public bool enemyGrounded = false;
     public float timeInterval = 8.0f;
 
+    private Transform enemyTransform;
+    private bool enemyFlipped = false;
+
     // Start is called before the first frame update
     public void Start()
     {
         enemyTarget = GameObject.Find("Main Character").GetComponent<Transform>();
-        harryPotter = GetComponent<Seeker>();   //Gets a A* seeker component
         rb2D = GetComponent<Rigidbody2D>();     //Gets a rigidbody2d component
-
-        InvokeRepeating("PathUpdate", 0f, .5f); // continuously updates the path
-
-        harryPotter.StartPath(rb2D.position, enemyTarget.position, PathComplete);
-
+        enemyTransform = GetComponent<Transform>();
         animator = GetComponent<Animator>();
-
         velocity = rb2D.velocity;
-    }
 
-    void PathUpdate()       //Invoked by InvokeRepeating to test if pathfinding is complete. if not updates the path
-    {
-        if(harryPotter.IsDone())
-        {
-            harryPotter.StartPath(rb2D.position, enemyTarget.position, PathComplete);
-        }
-    }
-
-    void PathComplete(Path p)
-    {
-        if(!p.error)
-        {
-            path = p;
-            currWayPoint = 0;
-        }
+        enemyMvmtSpeed += Random.Range(-150.0f, 150.0f);
     }
 
     private void AnimationHandler()
     {
         float temp = velocity.x * ((velocity.x < 0) ? -1 : 1);
-
-        /*GB: Hopefully, this is no longer needed.
-        //GB: Ignore random dips in velocity caused by the pathing algorithm.
-        //    These dips are usually around 1.0E-05 or 1.0E-06
-        if (temp > 1.0E-04) animator.SetFloat("Speed", temp);
-        */
-
         animator.SetFloat("Speed", temp);
     }
 
     private void enemyPursuit()
     {
-        direction =((Vector2)path.vectorPath[currWayPoint] - rb2D.position).normalized;
+        direction = ((Vector2)enemyTarget.position - rb2D.position).normalized;
         enemyForce = direction * enemyMvmtSpeed * Time.deltaTime;       //for enemy horizontal movement
         velocity = rb2D.velocity;
         velocity.x = enemyForce.x;
         rb2D.velocity = velocity;
     }
-
-    /*IEnumerator enemyStop()
-    {
-        yield return new WaitForSecondsRealtime(timeInterval);
-        canSeePlayer = false;
-        print("enemy has stopped");
-        
-        
-        enemyForce = direction * 0;       //for enemy horizontal movement
-        
-        velocity.x = 0;
-    }*/
-
     
     private void enemyStop()
     {
@@ -103,27 +60,24 @@ public class EnemyAI : MonoBehaviour
         velocity.x = 0;
     }
 
+    private void Flip()
+    {   //Rotates enemy based on player position
+        if (enemyTransform.position.x < enemyTarget.position.x && enemyFlipped)
+        {
+            enemyTransform.Rotate(0f, 180f, 0f);
+            enemyFlipped = false;
+        }
+        else if (enemyTransform.position.x > enemyTarget.position.x && !enemyFlipped)
+        {
+            enemyTransform.Rotate(0f, 180f, 0f);
+            enemyFlipped = true;
+        }
+    }
+
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if(path == null) // if no path return null
-        {
-            return;
-        }
-        
-        if(currWayPoint >= path.vectorPath.Count) // check if currWayPoint is at the end of calculated path
-        {
-            endOfPath = true;
-            return;
-        }
-        else
-        {
-            endOfPath = false;              //have not reached end of path
-        }
-
-        //if (canSeePlayer) enemyPursuit();
-
-        
+        Flip();
         
         if (playerLost)
         {
@@ -135,13 +89,6 @@ public class EnemyAI : MonoBehaviour
         }
 
         AnimationHandler();
-
-        float pathDistance = Vector2.Distance(rb2D.position, path.vectorPath[currWayPoint]);   //gets the path distance 
-
-        if(pathDistance < nxtWayPoint)
-        {
-            currWayPoint++;
-        }
     }
 
    private void OnTriggerEnter2D(Collider2D collision)
@@ -168,7 +115,6 @@ public class EnemyAI : MonoBehaviour
         else if(collision.tag == "Agro")
         {
             playerLost = true;
-            //StartCoroutine(enemyStop());
         }
         
     }
