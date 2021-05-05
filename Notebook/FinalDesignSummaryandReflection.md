@@ -7,22 +7,22 @@ was to create a platforming type game that is inspired by life during the Covid-
 to avoid other characters, e.g the "enemies", while controlling characters going through levels that mirror daily tasks in the 
 real world.
 
--Player Movement:	
+**-Player Movement:**	
 	Player movement in the game mirrors that of many platforming games. The character can run, jump, and 
 double jump as a way to move through the level while trying to avoid the enemies of the game.
 
--Player Health:
+**-Player Health:**
 	The approach that we settled on in regard to player health differs from a traditional game
 where events can occur that drain the main characters health. Instead, our approach used an "Infection Meter" 
 that tracks the main characters exposure to the virus. Once the the Infection Meter is full, the player has contracted
 the virus and the game/current life will be over.
 
--Enemies:
+**-Enemies:**
 	The design of the enemies involved characters that will move to within an unacceptable social distance
 during the time of a pandemic. When the enemies get within a close distance to the player character, the player character's
 infection value will begin to increment.
 
--Level Design:
+**-Level Design:**
 	Level design was meant to mirror daily tasks the we in the real world had to experience during the time of a pandemic.
 In the beginning we planned to pursue the development of three levels, however, as time passed it was decided to focus on one
 level that matched the theme of our game.  This level involves the player character traversing through a grocery store in search
