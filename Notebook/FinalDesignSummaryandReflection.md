@@ -29,8 +29,9 @@ level that matched the theme of our game.  This level involves the player charac
 of a fabled item during the time of pandemic, Toilet Paper. The player would have to avoid the enemies of the game while in 
 search of this item to avoid getting the virus.
 
-Limitations TODO
+Limitations:
 -------------------
+In the beginning we set out to make a platformer game with a family narrative set during the time of pandemic inspired by Covid-19. Due to time constraints our game was simplified. The family narrative was removed and we decided to focus our attention on one single level that is still a platformer with gameplay inspired by the pandemic.
 
 Future Direction:
 -------------------
