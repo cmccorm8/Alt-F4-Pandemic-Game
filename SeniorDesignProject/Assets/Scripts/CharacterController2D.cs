@@ -83,6 +83,7 @@ public class CharacterController2D : MonoBehaviour
             jump = true;
             if (jumpCnt < 2)
             {
+                FindObjectOfType<AudioManager>().Play("Jump");
                 jumpCnt++;
             }   
             
@@ -142,6 +143,13 @@ public class CharacterController2D : MonoBehaviour
             //infectionScore = Mathf.Floor(infectionScore);
             //print("Infection Score " + temp);
         }
+
+        if (temp == 1000)
+        {
+            FindObjectOfType<AudioManager>().StopPlaying("MainTheme");
+            FindObjectOfType<AudioManager>().Play("Infected");
+            FindObjectOfType<AudioManager>().Play("InfectedTheme");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -151,6 +159,7 @@ public class CharacterController2D : MonoBehaviour
             print("TP collected");
             Destroy(collision.gameObject);
             ItemManager.itemManager.UpdateScore(tpValue);
+            FindObjectOfType<AudioManager>().Play("PickupItem");
         }
     }
 }
