@@ -64,17 +64,6 @@ public class CharacterController2D : MonoBehaviour
         pcMvmt = Input.GetAxis("Horizontal");
 
         Flip();
-        /*//flip the sprit based on right or left
-        if (pcMvmt < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else 
-        {
-            spriteRenderer.flipX = false;
-        }*/
-
-        
         
         //print(pcMvmt);
         animator.SetFloat("Speed", Mathf.Abs(pcMvmt)); //if speed >.01(right) or <.01(left) on horizontal axis transition to run animation
@@ -84,10 +73,10 @@ public class CharacterController2D : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
-            if (jumpCnt < 2)
+            if (++jumpCnt < 2)
             {
                 FindObjectOfType<AudioManager>().Play("Jump");
-                jumpCnt++;
+                //jumpCnt++;
             }   
             
         }

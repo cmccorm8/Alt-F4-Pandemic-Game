@@ -99,7 +99,7 @@ public class EnemyAI : MonoBehaviour
             print("Enemy is Grounded");
             
         }
-        else if(collision.tag == "Player")
+        else if(collision.tag == "Agro")
         {
             canSeePlayer = true;
         }
