@@ -63,18 +63,18 @@ Enemy AI, NPC AI, as well as other scripts that are used throughout the game.
 
 Reflection:
 --------------
-Lessons Learned:
+**Lessons Learned:**
 	The main lesson learned is that game development is hard and takes time to implement. Otherwise, 
 there were many lessons that were learned on how to use Unity as a way to develop games. Unity 
 can have a steep learning curve. Once learned, it becomes easier to use and devlope games.
 
-Do it all over again:
+**Do it all over again:**
 	If we had to do it all over again, we would have more realistic goals that what we started with in the beginning.
 None in this group had ever used Unity before, so that added to some of our slow progress throughout the semester.
 However, if we were to start over today, we might make even more progress due to the knowledge of Unity 
 that we have now developed. 
 
-Advice for future teams:
+**Advice for future teams:**
 	The main piece of advice for any team that is considering developing a game using Unity is to start 
 with a reasonably small game and build on it from there. Set reasonable expectations, under
 promise and over deliver.  We would recommend using SCRUM methodology and make the goal
