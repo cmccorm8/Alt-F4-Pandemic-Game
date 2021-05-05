@@ -36,8 +36,6 @@ public class ModifiedEnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
 
         velocity = rb2D.velocity;
-
-        enemyMvmtSpeed += Random.Range(-50.0f, 50.0f);
     }
 
     void PathUpdate()       //Invoked by InvokeRepeating to test if pathfinding is complete. if not updates the path
