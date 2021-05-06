@@ -98,7 +98,7 @@ public class EnemyAI : MonoBehaviour
 
         //GB: Too many colliders were making physics take around 100ms a frame to generate so we 
         //    had to switch to this method to maintain playable framerates.
-        if(distance < 10f)
+        if(distance < 20f)
         {
             enemyPursuit();
         }

@@ -309,7 +309,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6493234515714169913
 Transform:
@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 3123529375757806833}
   - component: {fileID: 3123529375757806832}
   - component: {fileID: 3123529375757806846}
+  - component: {fileID: 3614502764930355170}
   - component: {fileID: 3123529375757806847}
   m_Layer: 12
   m_Name: _NPC
@@ -368,6 +369,7 @@ Transform:
   - {fileID: 1851216320472604030}
   - {fileID: 6873664998172730015}
   - {fileID: 7165165053626611539}
+  - {fileID: 6378816574681081211}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -440,6 +442,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyGrounded: 0
+  timeInterval: 8
+--- !u!114 &3614502764930355170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484374537777246587}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4c421e74906d04f9b448730c0729f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   timeInterval: 8
 --- !u!114 &3123529375757806847
 MonoBehaviour:
@@ -557,6 +572,36 @@ MonoBehaviour:
     m_Extent: {x: 0.36868984, y: 0.5281649, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 0
+--- !u!1 &1619100219403630513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6378816574681081211}
+  m_Layer: 12
+  m_Name: RayCast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6378816574681081211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619100219403630513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3370276222314176370}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1763543888293491630
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +647,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4308346569504871001
 Transform:
@@ -1124,7 +1169,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6188541069688746413
 Transform:
@@ -1155,7 +1200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1591102240166659917
 Transform:
@@ -1186,7 +1231,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3274217667824451965
 Transform:
@@ -1450,7 +1495,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6367466087686329741
 Transform:
@@ -1676,7 +1721,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4028137399184571703
 Transform:
@@ -1954,7 +1999,7 @@ PrefabInstance:
     - target: {fileID: 3985303600538115346, guid: 0f6d799205908374f90d40eeb02b5dd5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4201410725401421098, guid: 0f6d799205908374f90d40eeb02b5dd5,
         type: 3}
@@ -1969,7 +2014,7 @@ PrefabInstance:
     - target: {fileID: 4201410725401421098, guid: 0f6d799205908374f90d40eeb02b5dd5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4458530746687743379, guid: 0f6d799205908374f90d40eeb02b5dd5,
         type: 3}

@@ -13,7 +13,7 @@ public class NPCAI : MonoBehaviour
     private Vector3 npcScale;
     private Vector3 rayCastTarget;
     public Transform rayCastPos;
-    public Transform npcTransform;
+    private Transform npcTransform;
     public float rayCastDistance;
     public float timeInterval = 8.0f;
     public LayerMask ground;
@@ -24,6 +24,8 @@ public class NPCAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        npcTransform = GetComponent<Transform>();
+
        rb2D = GetComponent<Rigidbody2D>();
        animator = GetComponent<Animator>();
        StartCoroutine(RandomAI());
@@ -48,7 +50,7 @@ public class NPCAI : MonoBehaviour
         npcScale = npcTransform.localScale;
         
         //Determines if Flip() should be called
-        if(IsObstructed() || IsAtEdge())
+        if(IsObstructed() )//|| IsAtEdge())
         {
             //print("Hitting Wall");
             Flip();
@@ -178,6 +180,8 @@ public class NPCAI : MonoBehaviour
     */
     bool IsAtEdge()
     {
+        return false;
+
         bool atEdge = false;
 
         // determines and sets the raycast target position
