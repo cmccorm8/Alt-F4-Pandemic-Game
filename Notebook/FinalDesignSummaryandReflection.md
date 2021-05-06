@@ -65,7 +65,10 @@ heavily in the final implementation of the UI, continued to create art assets, c
 design, and worked quite a bit with the enemy AI to allow us to include as many enemies as possible in the 
 level without sacraficing performance.
 
--Kaden:
+-Kaden: 
+	I worked on the audio for the project. Which involved getting the audio files, implementing an 
+AudioManager for easier control and implementing a Sound script for more audioclip options.
+
 
 -Sid: I mostly worked on the User Interface and other functionality that made the game have more 
 comprehensive options regarding setting as well as  the Main Menu and Options Menu.
