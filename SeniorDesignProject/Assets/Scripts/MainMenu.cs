@@ -11,11 +11,16 @@ public class MainMenu : MonoBehaviour
 
     public string levelSelect;
 
+    public void Start()
+    {
+        //FindObjectOfType<AudioManager>().Play("MenuTheme");
+    }
+
     public void NewGame()
     {
         SceneManager.LoadScene("SuperMarket"); //(SceneManager.GetActiveScene().buildIndex + 1 );
-        /*FindObjectOfType<AudioManager>().StopPlaying("MenuTheme");
-        FindObjectOfType<AudioManager>().Play("MainTheme");*/
+        FindObjectOfType<AudioManager>().StopPlaying("MenuTheme");
+        FindObjectOfType<AudioManager>().Play("MainTheme");
     }
 
     public void Options()
