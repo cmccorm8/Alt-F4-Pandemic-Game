@@ -199,7 +199,7 @@ MonoBehaviour:
     m_Center: {x: 0.24628493, y: -0.13022977, z: 0}
     m_Extent: {x: 0.268705, y: 0.6297601, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &542570879513446725
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
     m_Center: {x: 0.23370998, y: 0.098905, z: 0}
     m_Extent: {x: 0.36868984, y: 0.5281649, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &1763543888293491630
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ MonoBehaviour:
     m_Center: {x: 0.26551372, y: -0.71669495, z: 0}
     m_Extent: {x: 0.52998614, y: 0.4225953, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &2044989111240634314
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ MonoBehaviour:
     m_Center: {x: 0.12124008, y: -0.13479465, z: 0}
     m_Extent: {x: 0.26871997, y: 0.62519467, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &2394908855563734670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1404,7 @@ MonoBehaviour:
     m_Center: {x: 0.265035, y: -0.7161946, z: 0}
     m_Extent: {x: 0.52433497, y: 0.42319524, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &6377390901759035409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1600,7 @@ MonoBehaviour:
     m_Center: {x: -0.1711252, y: -0.29245, z: 0}
     m_Extent: {x: 0.28121495, y: 0.24214004, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &7196108002884825111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,7 +1863,7 @@ MonoBehaviour:
     m_Center: {x: -0.6916003, y: -0.8675001, z: 0}
     m_Extent: {x: 1.0565802, y: 0.8675001, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1001 &4014317291029318142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1951,6 +1951,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3370276222314176370}
     m_Modifications:
+    - target: {fileID: 3985303600538115346, guid: 0f6d799205908374f90d40eeb02b5dd5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4201410725401421098, guid: 0f6d799205908374f90d40eeb02b5dd5,
         type: 3}
       propertyPath: m_Name
@@ -1960,6 +1965,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201410725401421098, guid: 0f6d799205908374f90d40eeb02b5dd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4458530746687743379, guid: 0f6d799205908374f90d40eeb02b5dd5,
         type: 3}

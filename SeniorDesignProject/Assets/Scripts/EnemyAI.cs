@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private bool canSeePlayer = false;
     private bool playerLost = false;
-    public bool enemyGrounded = false;
+    public bool enemyGrounded = true;
     public float timeInterval = 8.0f;
 
     private Transform enemyTransform;
@@ -50,10 +50,8 @@ public class EnemyAI : MonoBehaviour
     
     private void enemyStop()
     {
-        //yield return new WaitForSecondsRealtime(timeInterval);
         canSeePlayer = false;
         playerLost = false;
-        print("enemy has stopped");
 
         enemyForce = direction * 0;       //for enemy horizontal movement
 
@@ -62,7 +60,24 @@ public class EnemyAI : MonoBehaviour
 
     private void Flip()
     {   //Rotates enemy based on player position
-        if (enemyTransform.position.x < enemyTarget.position.x && enemyFlipped)
+        if (enemyFlipped)
+        {
+            if (enemyTransform.position.x < enemyTarget.position.x)
+            {
+                enemyTransform.Rotate(0f, 180f, 0f);
+                enemyFlipped = false;
+            }
+
+        }
+        else
+        {
+            if (enemyTransform.position.x > enemyTarget.position.x)
+            {
+                enemyTransform.Rotate(0f, 180f, 0f);
+                enemyFlipped = true;
+            }
+        }
+        /*if (enemyTransform.position.x < enemyTarget.position.x && enemyFlipped)
         {
             enemyTransform.Rotate(0f, 180f, 0f);
             enemyFlipped = false;
@@ -71,51 +86,66 @@ public class EnemyAI : MonoBehaviour
         {
             enemyTransform.Rotate(0f, 180f, 0f);
             enemyFlipped = true;
-        }
+        }*/
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
         Flip();
-        
-        if (playerLost)
+
+        float distance = (enemyTarget.position.x - enemyTransform.position.x) * ((enemyFlipped) ? -1 : 1);
+
+        //GB: Too many colliders were making physics take around 100ms a frame to generate so we 
+        //    had to switch to this method to maintain playable framerates.
+        if(distance < 10f)
+        {
+            enemyPursuit();
+        }
+        else
+        {
+            enemyStop();
+        }
+
+        /*if (playerLost)
         {
             enemyStop();
         }
         else if (canSeePlayer)
         {
             enemyPursuit();
-        }
+        }*/
 
         AnimationHandler();
     }
 
-   private void OnTriggerEnter2D(Collider2D collision)
+   /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "ground" || collision.tag == "Obstacle")
+        *//*if(collision.tag == "ground" || collision.tag == "Obstacle")
         {
             enemyGrounded = true;
             print("Enemy is Grounded");
             
         }
-        else if(collision.tag == "Agro")
+        else *//*if(collision.tag == "Agro")
         {
             canSeePlayer = true;
+            //enemyPursuit();
         }
         
     }
 
     private void OnTriggerExit2D(Collider2D collision) 
     {
-        if(collision.tag == "ground" || collision.tag == "Obstacle")
+        *//*if(collision.tag == "ground" || collision.tag == "Obstacle")
         {
             enemyGrounded = false;
         }
-        else if(collision.tag == "Agro")
+        else *//*if(collision.tag == "Agro")
         {
             playerLost = true;
+            //enemyStop();
         }
         
-    }
+    }*/
 }
