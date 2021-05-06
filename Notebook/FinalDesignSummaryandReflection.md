@@ -32,6 +32,7 @@ search of this item to avoid getting the virus.
 Limitations:
 -------------------
 In the beginning we set out to make a platformer game with a family narrative set during the time of pandemic inspired by Covid-19. Due to time constraints our game was simplified. The family narrative was removed and we decided to focus our attention on one single level that is still a platformer with gameplay inspired by the pandemic.
+We also planned on working with Raspberry Pi to add extra functionality to the game but this feature was removed due to additional complexity.
 
 Future Direction:
 -------------------
@@ -59,7 +60,8 @@ Enemy AI, NPC AI, as well as other scripts that are used throughout the game.
 
 -Kaden:
 
--Sid:
+-Sid: I mostly worked on the User Interface and other functionality that made the game have more 
+comprehensive options regarding setting as well as  the Main Menu and Options Menu.
 
 
 Reflection:
@@ -67,7 +69,7 @@ Reflection:
 **Lessons Learned:**
 	The main lesson learned is that game development is hard and takes time to implement. Otherwise, 
 there were many lessons that were learned on how to use Unity as a way to develop games. Unity 
-can have a steep learning curve. Once learned, it becomes easier to use and devlope games.
+can have a steep learning curve. Once learned, it becomes easier to use and develop games.
 
 **Do it all over again:**
 	If we had to do it all over again, we would have more realistic goals that what we started with in the beginning.
