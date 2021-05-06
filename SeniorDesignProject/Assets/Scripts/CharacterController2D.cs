@@ -136,7 +136,7 @@ public class CharacterController2D : MonoBehaviour
             //print("Infection Score " + temp);
         }
 
-        if (temp == 1000)
+        if (temp == 500)
         {
             FindObjectOfType<AudioManager>().StopPlaying("MainTheme");
             FindObjectOfType<AudioManager>().Play("Infected");
