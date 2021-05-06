@@ -56,7 +56,14 @@ Statement of Work:
 	I worked as the primary programmer of the game. I implemented the character controller script, 
 Enemy AI, NPC AI, as well as other scripts that are used throughout the game.
 
--Gage:
+-Gage: 
+	It's difficult to breifly summarize my contributions to this project. During the early stages of 
+developement, I worked primarily on the game's art and animation as well as some supplemental programming 
+in the character controller and enemy AI. As things progressed, I began working more heavily on level design 
+in addition to continuing my work on the game's art and animation. Towards the end of development, I assisted 
+heavily in the final implementation of the UI, continued to create art assets, continued to work on level 
+design, and worked quite a bit with the enemy AI to allow us to include as many enemies as possible in the 
+level without sacraficing performance.
 
 -Kaden:
 
