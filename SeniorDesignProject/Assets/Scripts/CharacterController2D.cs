@@ -136,12 +136,12 @@ public class CharacterController2D : MonoBehaviour
             //print("Infection Score " + temp);
         }
 
-        if (temp == 500)
+        /*if (temp == 500)
         {
             FindObjectOfType<AudioManager>().StopPlaying("MainTheme");
             FindObjectOfType<AudioManager>().Play("Infected");
             FindObjectOfType<AudioManager>().Play("InfectedTheme");
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

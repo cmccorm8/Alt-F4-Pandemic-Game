@@ -21,4 +21,9 @@ public class InfectionMeter : MonoBehaviour
     {
         slider.value -= value;
     }
+
+    public float get()
+    {
+        return slider.value;
+    }
 }
